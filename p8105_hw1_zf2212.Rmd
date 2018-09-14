@@ -6,13 +6,15 @@ output: github_document
 ---
 # Problem 1
 
-```{r problem_1}
+```{r problem_1, warning = FALSE}
 library(tidyverse)
 
 ## set seed to ensure reproducibility
+
 set.seed(123)
 
 ## create a data frame
+
 hw1_df = tibble(
   samp = runif(10, min = 0, max = 5),
   vec_logical = c(samp > 2),
@@ -21,6 +23,7 @@ hw1_df = tibble(
 )  
 
 ## numeric and logical vector works, character and factor vector doesn't
+
 mean(hw1_df$samp)
 mean(hw1_df$vec_logical)
 mean(hw1_df$vec_char)
@@ -28,7 +31,7 @@ mean(hw1_df$vec_factor)
 
 ```
 
-```{r, convert_to_numeric, eval = FALSE}
+```{r convert_to_numeric, eval = FALSE}
 
 vec_logical_num = as.numeric(hw1_df$vec_logical)
 vec_char_num = as.numeric(hw1_df$vec_char)
